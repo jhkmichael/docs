@@ -1,30 +1,6 @@
-- 数据结构
-  - [数组](data-structure/array/ "数组")
-  - [字符串](data-structure/string/ "字符串")
-  - [链表](data-structure/linked_list/ "链表")
-  - 树
-    - [递归](data-structure/tree/recursion/ "递归")
-    - [层次遍历（BFS）](data-structure/tree/bfs/ "层次遍历（BFS）")
-    - [前中后序遍历（DFS）](data-structure/tree/dfs/ "前中后序遍历（DFS）")
-    - [其他](data-structure/tree/other/ "其他")
-  - [堆](data-structure/heap/ "堆")
-  - [栈](data-structure/stack/ "栈")
-  - [哈希表](data-structure/hash/ "哈希表")
-- 算法思想
-  - 排序
-    - [堆排序](algorithm/sort/heap/ "堆排序")
-    - [快速排序](algorithm/sort/quick/ "快速排序")
-    - [冒泡排序](algorithm/sort/bubble/ "冒泡排序")
-    - [其他](algorithm/sort/other/ "其他")
-  - 搜索
-    - [深度优先](algorithm/research/dfs/ "深度优先")
-    - [广度优先](algorithm/research/bfs/ "广度优先")
-    - [二分查找](algorithm/research/binary-search/ "二分查找")
-  - [动态规划](algorithm/dynamic/ "动态规划")
-  - [贪心](algorithm/greedy/ "贪心")
-  - [位运算](algorithm/bit/ "位运算")
-  - [数学题](algorithm/math/ "数学题")
-  - [其他](algorithm/other/ "其他")
-- 周赛
-  - [第 121 场周赛](weekly/121/ "第 121 场周赛")
-  - [第 122 场周赛](weekly/122/ "第 122 场周赛")
+- 设计模式
+
+  - [第一章节](desgin-pattern/Java面试必备：手写单例模式.md)
+  - [工厂模式](desgin-pattern/工厂模式超详解（代码示例）.md)
+  - [原型模式](desgin-pattern/设计模式之原型模式.md)
+  - [代理模式](desgin-pattern/设计模式之代理模式.md)
