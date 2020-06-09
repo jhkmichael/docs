@@ -1,5 +1,5 @@
 * [介绍](README.md)
-* [基本安装](installation/README.md)
+* [zabbix](zabbix.md)
    * [Node.js安装](installation/nodejs-install.md)
    * [Gitbook安装](installation/gitbook-install.md)
    * [Gitbook命令行速览](installation/gitbook-cli.md)
