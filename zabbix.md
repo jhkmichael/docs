@@ -46,7 +46,7 @@ zabbix_server hosts:
 
 ## 依赖软件安装
 
-	### 一: nginx-1.18.0
+### 一: nginx-1.18.0
 
 nginx: 源码包官网 https://nginx.org/en/download.html
 
@@ -142,118 +142,146 @@ zabbix安装部署：
 
 ​	//下载包
 
-​	rpm -Uvh https://repo.zabbix.com/zabbix/4.4/rhel/7/x86_64/zabbix-release-4.4-1.el7.noarch.rpm
-
-​	yum clean all
+```shell
+rpm -Uvh https://repo.zabbix.com/zabbix/4.4/rhel/7/x86_64/zabbix-release-4.4-1.el7.noarch.rpm
+yum clean all
+```
 
 ​	//安装server端和agent端	
 
-​	yum install zabbix-server-mysql zabbix-agent
+```shell
+yum install zabbix-server-mysql zabbix-agent
+```
 
 ​	2,安装 server 的 web 前端服务
 
 ​	//安装epel 扩展源
 
-​	yum install epel-release
+```shell
+yum install epel-release
+```
 
 ​	//安装 zabbix web 前端程序(mysql 用户端 和 配置nginx)
 
-​	yum install zabbix-web-mysql zabbix-nginx-conf
+```shell
+yum install zabbix-web-mysql zabbix-nginx-conf
+```
 
 ​	3,初始化 zabbix 库
 
 ​	//在mysql主机192.168.0.106 操作：
 
-​	mysql -uroot -p
+```shell
+mysql -uroot -p
+```
 
 ​	//创建zabbix库
- 	mysql> create database zabbix character set utf8 collate utf8_bin;
+
+```shell
+mysql> create database zabbix character set utf8 collate utf8_bin;
+```
 
 ​	//新建用户zabbix，密码也是zabbix，%表示该用户可在任何主机上登陆，
 
-​	mysql> create user ‘zabbix’@‘%’ identified by 'zabbix';
+```shell
+mysql> create user ‘zabbix’@‘%’ identified by 'zabbix';
+```
 
 ​	//zabbix库的所有权限开放给zabbix用户
 
-​	mysql> grant all privileges on zabbix.* to ’zabbix‘@‘%’;
-
-​	mysql> quit;
-
-​	
+```shell
+mysql> grant all privileges on zabbix.* to ’zabbix‘@‘%’;
+mysql> quit;	
+```
 
 ​	在zabbix_server主机192.168.0.201操作：
 
 ​	//初始化zabbix库,-u和-p是帐号密码，再后面接的数据库名。
 
-​	zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -h 192.168.0.106 -P 3306 -uzabbix -pzabbix zabbix
+```shell
+zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -h 192.168.0.106 -P 3306 -uzabbix -pzabbix zabbix
+```
 
+​	ps: systemctl控制源码包安装的程序
 
+​	控制nginx：
 
+​	<https://blog.csdn.net/qq_21437451/article/details/82530057>
 
+​	nginx会报错“/var/run/nginx.pid" no such file or directory的解决：
 
-ps: systemctl控制源码包安装的程序
+​	到nginx.conf 文件中设置
 
-​	 控制nginx：
-
-<https://blog.csdn.net/qq_21437451/article/details/82530057>
-
-nginx会报错“/var/run/nginx.pid" no such file or directory的解决：
-
-​	  到nginx.conf 文件中设置
-
-​	pid		/var/run/nginx.pid
-
-
-
-​	zabbix web目录 ：
-
-​	/usr/share/zabbix 
-
-​	zabbix server配置文件目录：
-
-​	cd /etc/zabbix
+```shell
+pid	/var/run/nginx.pid
+```
 
 ​	
 
+​	4, zabbix web前端配置
+
+​	zabbix web目录 ：	
+
+```shell
+/usr/share/zabbix 
+```
+
+​	zabbix server配置文件目录：
+
+```shell
+cd /etc/zabbix
+```
+
 ​	拷贝zabbix web前端程序目录到 nginx的网页根目录中：
 
-​	cp -R /usr/share/zabbix /usr/local/nginx/html
+```shell
+cp -R /usr/share/zabbix /usr/local/nginx/html
+```
 
+​	
 
-
-​	开启zabbix服务端和客户端。
+​	6, 开启zabbix服务端和客户端。
 
 ​	zabbix进入前端搭建界面。
 
 ​	php bcmath fail解决：
 
-​	yum install *bcmath* --skip-broken
+```shell
+yum install *bcmath* --skip-broken
+```
 
-​	php.ini中添加： extension=bcmath.so
+​	php.ini中添加： 
+
+```shell
+extension=bcmath.so
+```
 
 ​	ldap warning解决：
 
-​	yum install *ldap* --skip-broken
+```shell
+yum install *ldap* --skip-broken
+```
 
-​	php.ini中添加： extension=ldap.so
+​	php.ini中添加： 
 
-
+```shell
+extension=ldap.so
+```
 
 ​	安装时连接mysql前，要注意关闭selinux。
 
 
 
+
 ​	zabbix前端配置文件：
 
-​	/etc/zabbix/web/zabbix.conf.php
-
-
+```shell
+/etc/zabbix/web/zabbix.conf.php
+```
 
 ​	zabbix前端默认登陆密码
 
-​	Admin
-
-​       zabbix
+​	Admin  zabbix
 
 ​	
 
