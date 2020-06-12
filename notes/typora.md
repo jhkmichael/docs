@@ -1,5 +1,6 @@
 typora 切换源码显示模式：
 command + /
+ctrl + /
 
 markdown 标题:
 输入: #+空格，按回车
@@ -9,5 +10,6 @@ markdown 标题:
 按 shift + Enter 换行，是换单行。
 
 代码块：
-alt + command + C
+MACOS：alt + command + C
+windows：shift + ctrl + K
 

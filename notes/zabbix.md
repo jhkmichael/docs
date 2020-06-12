@@ -124,7 +124,7 @@ https://www.cnblogs.com/hanyouchun/p/5159889.html
 
 
 
-###三: mysql 8.0.18
+### 三: mysql 8.0.18
 
 192.168.0.106:3306 
 
@@ -132,9 +132,7 @@ https://www.cnblogs.com/hanyouchun/p/5159889.html
 
 
 
-## 开始部署
-
-zabbix安装部署：
+## zabbix部署
 
 ​	官方安装教程：https://www.zabbix.com/download?zabbix=4.4&os_distribution=centos&os_version=7&db=mysql&ws=nginx 
 
@@ -268,48 +266,38 @@ yum install *ldap* --skip-broken
 extension=ldap.so
 ```
 
-​	安装时连接mysql前，要注意关闭selinux。
+ps：
 
+1，安装时连接mysql前，要注意关闭selinux，否则zabbix前端程序无法链接数据库。
 
-
-
-​	zabbix前端配置文件：
+2，zabbix前端配置文件：
 
 ```shell
 /etc/zabbix/web/zabbix.conf.php
 ```
 
-​	zabbix前端默认登陆密码
+3，zabbix前端默认登陆密码
 
-​	Admin  zabbix
+​	 Admin  zabbix
+4，zabbix_server log路径：
 
-​	
+```
+find / -name zabbix_server.log 
+/var/log/zabbix/zabbix_server.log
+```
 
-​	
+5，如果数据库不在本地主机，需要去zabbix_server.conf 配置数据库的ip，库名，用户名密码。
+  （这个方式不使用zabbix_server的mysql.sock）
 
-​	zabbix_server运行中的维护：
-
-​	查看log文件路径： find / -name zabbix_server.log 
-
-​	/var/log/zabbix/zabbix_server.log
-
-
-
-​	数据库不在本地，需要去zabbix_server.conf 配置数据库的ip，库名，用户名密码。（这个方式不需要zabbix_server上有mysql.sock）
-
-​	DBHost = 192.168.0.106 
+```
+//案例使用的数据库主机IP地址
+DBHost = 192.168.0.106 
+```
 
 
 
-iOS即使通讯实现大全
+## zabbix使用教程10则：
 
-<http://www.cocoachina.com/articles/18544>
-
-
-
-
-
-zabbix使用教程10则：
 
 [http://www.zsythink.net/archives/category/%e8%bf%90%e7%bb%b4%e7%9b%b8%e5%85%b3/zabbix/](http://www.zsythink.net/archives/category/%E8%BF%90%E7%BB%B4%E7%9B%B8%E5%85%B3/zabbix/) 
 
