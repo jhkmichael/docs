@@ -224,10 +224,10 @@ pid	/var/run/nginx.pid
 /usr/share/zabbix 
 ```
 
-​	zabbix server配置文件目录：
+​	zabbix web配置文件目录：
 
 ```shell
-cd /etc/zabbix
+cd /etc/zabbix/web
 ```
 
 ​	拷贝zabbix web前端程序目录到 nginx的网页根目录中：
@@ -241,6 +241,12 @@ cp -R /usr/share/zabbix /usr/local/nginx/html
 ​	6, 开启zabbix服务端和客户端。
 
 ​	zabbix进入前端搭建界面。
+
+![image-20200613221342413](C:\Users\ake\Desktop\docs\images\image-20200613221342413.png)
+
+安装完成：
+
+![image20200613221937820](C:\Users\ake\Desktop\docs\images\image-20200613221937820.png)
 
 ​	php bcmath fail解决：
 
