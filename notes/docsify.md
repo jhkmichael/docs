@@ -31,3 +31,15 @@ docsify init
 docsify serve
 //localhost:3000 为默认浏览入口
 ```
+
+ps：
+
+​	1，图片使用相对路径即可正常。
+
+​	2，国内线路，github图片浏览目前需要设置hosts。
+
+​	3，所以，建议使用图床。
+
+hosts修改配置：
+
+https://www.jianshu.com/p/1a2013b38730
