@@ -242,11 +242,11 @@ cp -R /usr/share/zabbix /usr/local/nginx/html
 
 ​	zabbix进入前端搭建界面。
 
-![image-20200613221342413](C:\Users\ake\Desktop\docs\images\image-20200613221342413.png)
+![image-20200613221342413](../images/image-20200613221342413.png)
 
 安装完成：
 
-![image20200613221937820](C:\Users\ake\Desktop\docs\images\image-20200613221937820.png)
+![image-20200613221937820](../images/image-20200613221937820.png)
 
 ​	php bcmath fail解决：
 
