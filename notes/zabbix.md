@@ -1,5 +1,3 @@
-# zabbix部署
-
 ## 实验环境
 
 CPU 4 vcpu 内存2G  硬盘20G 
@@ -306,4 +304,8 @@ DBHost = 192.168.0.106
 
 
 [http://www.zsythink.net/archives/category/%e8%bf%90%e7%bb%b4%e7%9b%b8%e5%85%b3/zabbix/](http://www.zsythink.net/archives/category/%E8%BF%90%E7%BB%B4%E7%9B%B8%E5%85%B3/zabbix/) 
+
+zabbix 分布式监控
+
+https://www.cnblogs.com/zhangweiyi/p/10534408.html 
 
