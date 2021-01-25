@@ -239,9 +239,9 @@ cp -R /usr/share/zabbix /usr/local/nginx/html
 ​	6, 开启zabbix服务端和客户端。
 
 ​	zabbix进入前端搭建界面。
-nginx端口设置为44669
-localhost:44669/zabbix
-http://mrkeorg.123nat.com:44669/zabbix
+​	nginx端口设置为44669
+​	localhost:44669/zabbix
+​	http://mrkeorg.123nat.com:44669/zabbix
 
 ![image-20200613221342413](../images/image-20200613221342413.png)
 
